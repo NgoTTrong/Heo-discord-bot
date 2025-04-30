@@ -1,0 +1,14 @@
+create table schedules (
+  id uuid default uuid_generate_v4() primary key,
+  guild_id text not null,
+  channel_id text not null,
+  user_id text not null,
+  scheduled_at timestamptz not null,
+  created_at timestamptz default now()
+);
+
+
+create table roles (
+  id uuid default uuid_generate_v4() primary key,
+  role_name text not null
+);
